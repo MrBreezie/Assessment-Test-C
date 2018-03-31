@@ -31,6 +31,7 @@ echo "<p><b>The Broadsheet for the students' examination is displayed a below</b
 echo "<ul>";
 foreach ($scores as $name => $score) {
 	echo "<li>".$name." || ".$score."%"."</li>";
+}
 echo "</ul>";
 
 echo "<p><b>The number of people that failed is: </p>".failure($scores, 50);
