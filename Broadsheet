@@ -1,0 +1,38 @@
+<?php
+
+$scores = array(
+	"Olumide Ayobami" => "61",
+	"Yusuf Aisha" => "68",
+	"Adio Funmilayo" => "49",
+	"James Daniel" => "56",
+	"Alele Segun" => "71",
+	"Oluseyi Omobobola" => "65",
+	"Valentine Bright" => "68",
+	"Olugbile Tolulope" => "76",
+	"Bassey Samuel" => "53",
+	"Oluchi Amarachi" => "39",
+	"Olofin Yemi" => "41",
+	"Aliu Danjuma" => "57"
+);
+arsort($scores);
+
+function failure($a, $b) {
+	$failed = 0;
+	foreach ($a as $name => $score) {
+		if ($score < $b) {
+			++$failed;
+		}
+	}
+echo $failed;
+}
+
+
+echo "<p><b>The Broadsheet for the students' examination is displayed a below</b></p>";
+echo "<ul>";
+foreach ($scores as $name => $score) {
+	echo "<li>".$name." || ".$score."%"."</li>";
+echo "</ul>";
+
+echo "<p><b>The number of people that failed is: </p>".failure($scores, 50);
+
+?>
