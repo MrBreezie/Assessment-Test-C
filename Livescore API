@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Live Soccer Update | Get the feel of the moment!</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+
+  function getScores() {
+    var x = new XMLHttpRequest();
+    var url = "https://apifootball.com/api/?action=get_events&from=2018-03-31&to=2018-03-31&league_id=62&match_live = 1&APIkey=4d76d688c0ff460591dd52bc5ad301adf52db3ad5757ec16367a84e162a6622e";
+    var method = "GET";
+    x.open(method, url,true);
+    x.onload = function(Response) {
+      let data = JSON.parse(Response.currentTarget.response);
+      console.log(data);
+      let match_1 = document.getElementById("match_1").innerHTML = data;
+      let match_2 = document.getElementById("match_2").innerHTML = data;
+    }
+  x.send();
+  }
+  </script>
+</head>
+<body>
+
+<div class="jumbotron text-center" style="background-color: white;">
+  <h1 style="color: red;">Welcome to the <span style="color: green; text-decoration: underline;">Live Soccer Update</span> Feed</h1>
+  <p><h3>Get the feel of the moment!</h3></p> 
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+        <img src="https://www.telegraph.co.uk/content/dam/football/spark/virgin-twenty-is-plenty/football-match-crowd-cheering.jpg?imwidth=1400" style="height: auto; width: 100%">
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <p id="match_1"> </p>
+    </div>
+    <div class="col-sm-6">
+      <p id="match_2"></p>
+    </div>
+  </div>
+</div>
+<div class="jumbotron text-center" style="background-color: white;">
+<button onclick="getScores()" style="color: white; font-weight: bold; background-color: green;">GET LIVESCORES</button> 
+</div>
+
+</body>
+</html>
