@@ -1,5 +1,43 @@
 <?php
 
+// Task2: 
+
+// Olumide Ayobami - 61%
+// Yusuf Aisha - 68%
+// Adio Funmilayo - 49%
+// James Daniel - 56%
+// Alele Segun - 71%
+// Oluseyi Omobobola - 65%
+// Valentine Bright - 68%
+// Olugbile Tolulope - 76%
+// Bassey Samuel - 53%
+// Oluchi Amarachi - 39%
+// Olofin Yemi - 41%
+// Aliu Danjuma - 57%
+
+// Create an array with the data above, then perform the follow
+// i) Beautifully display the broadsheet in this format
+// Name || Percentage || Position (NB: display from first position to last)  
+
+
+// ii) if the pass percentage is 50%, write a function that displays the amount of students that failed
+// position();
+
+// for ($i=1; $i <= sizeof($scores) ; $i++) { 
+// 	if ($i == "1") {
+// 		echo "$i"."st"."<br>";
+// 	}
+// 	elseif ($i == "2") {
+// 		echo "$i"."nd"."<br>";
+// 	}
+// 	elseif ($i == "3") {
+// 		echo "$i"."rd"."<br>";
+// 	}
+// 	else {
+// 		echo "$i"."th"."<br>";
+// 	}
+// }
+
 $scores = array(
 	"Olumide Ayobami" => "61",
 	"Yusuf Aisha" => "68",
@@ -34,6 +72,8 @@ foreach ($scores as $name => $score) {
 }
 echo "</ul>";
 
-echo "<p><b>The number of people that failed is: </p>".failure($scores, 50);
+echo "<p><b>The number of people that failed is: </p>";
+
+failure($scores, 50);
 
 ?>
