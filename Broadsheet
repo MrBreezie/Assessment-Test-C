@@ -27,7 +27,7 @@ echo $failed;
 }
 
 
-echo "<p><b>The Broadsheet for the students' examination is displayed a below</b></p>";
+echo "<p><b>The Broadsheet for the students' examination is displayed as below</b></p>";
 echo "<ul>";
 $i = 1;
 foreach ($scores as $name => $score) {
