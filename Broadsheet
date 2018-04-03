@@ -27,10 +27,31 @@ echo $failed;
 }
 
 
-echo "<p><b>The Broadsheet for the students' examination is displayed as below</b></p>";
+echo "<p><b>The Broadsheet for the students' examination is displayed a below</b></p>";
 echo "<ul>";
+$i = 1;
 foreach ($scores as $name => $score) {
-	echo "<li>".$name." || ".$score."%"."</li>";
+// 	for ($i=1; $i <= count($scores); ++$i) { 
+// 		echo "<li>".$name." || ".$score."%"." || ".$i."</li>";
+// 	}
+// }
+	$position = "";
+	if ($i == "1") {
+		$position = "1st";
+	}
+	elseif ($i == "2") {
+		$position = "2nd";
+	}
+	elseif ($i == "3") {
+		$position = "3rd";
+	}
+	else {
+		$position = $i."th";
+	}
+	echo "<li>".$name." || ".$score."%"." || ".$position."</li>";
+
+	$i++;
+	
 }
 echo "</ul>";
 
